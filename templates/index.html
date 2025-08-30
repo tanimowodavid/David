@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero-wrapper" id="home">
+      <!-- Navbar -->
+      <div class="nav-holder">
+        <nav class="navbar">
+          <a href="#home"
+            ><img src="static/images/td-logo1.png" alt="logo" class="logo"
+          /></a>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#bio">BIO</a></li>
+            <li><a href="#project">PROJECT</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#main">CONTACT</a></li>
+            <li><button id="theme-toggle"></button></li>
+          </ul>
+          <div class="menu-toggle" id="menuToggle">
+            <i class="bi bi-hdd-stack"></i>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hero padded">
+        <div class="intro">
+          <div class="intro-text">
+            <h1 class="">Tanimowo</h1>
+            <h1 class="">David</h1>
+            <p class="open-sans-regular">Hi, I'm a Fullstack Developer</p>
+            <div class="mobile">
+              <br /><br />
+              <a href="#main" class="find-me mobile"
+                ><button>&lt; Find me &sol;&gt;</button></a
+              >
+            </div>
+          </div>
+          <div id="sittingdev"></div>
+        </div>
+        <a href="#main" class="find-me pc"
+          ><button>&lt; Find me &sol;&gt;</button></a
+        >
+      </div>
+    </header>
+    <hr />
+
+    <!-- B I O  -->
+    <section class="bio-wrapper" id="bio">
+      <div class="bio padded">
+        <img src="static/images/dotgrid.png" class="dots" alt="dots" />
+        <img src="static/images/dotgrid.png" class="dots" alt="dots" />
+        <h1>Bio</h1>
+        <p>
+          I’m a passionate Fullstack developer with a strong drive for
+          continuous growth and innovation. I love building practical solutions,
+          learning new technologies, and finding creative ways to solve
+          problems.
+        </p>
+        <br /><br />
+        <h1>What I can do</h1>
+        <p>
+          <b>MAKE it Look Good</b><br />
+          <br />
+          I put together layouts that are clean, professional, and easy to use.
+          Whether I’m starting from scratch or building from a provided design,
+          I make sure everything is structured and functional.
+        </p>
+        <br />
+        <p>
+          <b>MAKE It Work</b><br />
+          <br />
+          I can build the logic that powers applications behind the scenes. From
+          designing databases to writing APIs, I make sure everything runs
+          smoothly, securely, and can scale when it needs to.
+        </p>
+        <br />
+        <p>
+          <b>MAKE It Last</b><br />
+          <br />
+          I don’t just stop at building — I make sure your application stays
+          reliable over time. Whether it’s fixing issues, improving performance,
+          or adding new features, I keep things running smoothly as your needs
+          grow.
+        </p>
+      </div>
+    </section>
+
+    <!-- S K I L L S  -->
+    <section class="skill-wrapper">
+      <div class="padded">
+        <h1>Top Skills</h1>
+        <div class="skills">
+          <div class="skill-set">
+            <div class="btn-group" id="myBtnGroup" data-single="true">
+              <button data-value="1">
+                <i class="bi bi-person-fill-gear"></i>
+                <div class="orbit"></div>
+              </button>
+              <div class="separator"></div>
+              <button data-value="2">
+                <i class="bi bi-person-heart"></i>
+                <div class="orbit"></div>
+              </button>
+            </div>
+            <div class="set1">
+              <h5 class="set-title">Technical Skill</h5>
+              <li>
+                HTML/CSS/JS <i class="bi bi-filetype-html"></i
+                ><i class="bi bi-filetype-css"></i
+                ><i class="bi bi-filetype-js"></i>
+              </li>
+              <li>
+                Flask/Django <i class="bi bi-boxes"></i
+                ><i class="bi bi-braces"></i>
+              </li>
+              <li>RESTful API <i class="bi bi-diagram-3"></i></li>
+              <li>
+                Git/GitHub<i class="bi bi-git"></i><i class="bi bi-github"></i>
+              </li>
+              <li>Databases (SQL/NoSQL) <i class="bi bi-database"></i></li>
+            </div>
+            <div class="set2">
+              <h5 class="set-title">Soft Skill</h5>
+              <li>
+                Problem-Solving <i class="bi bi-puzzle"></i
+                ><i class="bi bi-lightbulb"></i>
+              </li>
+              <li>Communication <i class="bi bi-chat-dots"></i></li>
+              <li>Collaboration <i class="bi bi-people"></i></li>
+              <li>Adaptability <i class="bi bi-arrow-repeat"></i></li>
+              <li>Attention to Detail <i class="bi bi-search"></i></li>
+            </div>
+          </div>
+          <div id="floatingdev"></div>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- P R O J E C T  -->
+    <section class="project-wrapper" id="project">
+      <div class="padded">
+        <h1>What Have I Done?</h1>
+        <div class="project">
+          <div class="project-img">
+            <img src="static/images/blogpic.png" alt="" />
+          </div>
+          <div class="project-description">
+            <h3>Blog</h3>
+            <p>
+              I created a blog using flask to write about how pissed i am
+              considering the fact that you yes - can give me a small project
+              and send a lot of money but you just choose to keep smiling. I
+              dont even know whats funny 😠
+            </p>
+            <div class="project-links"><a href="">github</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- C O N T A C T -->
+    <section id="main">
+      <div class="padded">
+        <header>
+          <span class="avatar"
+            ><img src="static/images/David.png" alt=""
+          /></span>
+          <h1>Tanimowo David</h1>
+          <p>Fullstack Web Developer</p>
+        </header>
+
+        <footer>
+          <ul class="icons">
+            <li>
+              <a href="https://github.com/tanimowo-david" target="_blank"
+                ><i class="bi bi-github"></i
+              ></a>
+            </li>
+            <li>
+              <a href="mailto:davidtanimowo01@gmail.com"
+                ><i class="bi bi-envelope"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/tanimowo-david"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://wa.me/+2349130739626" target="_blank"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+          <!-- Footer -->
+          <div id="footer">
+            <ul class="copyright">
+              <li>&copy; 2025</li>
+              <li>Made with love ❤️</li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <script src="static/index.js"></script>
+    <script>
+      (function () {
+        const group = document.getElementById("myBtnGroup");
+        const buttons = Array.from(group.querySelectorAll("button"));
+
+        // Initially
+        buttons[0].classList.add("active");
+        if (buttons[0]) {
+          // Grab the div with class 'orbit' inside the first button
+          const orbitDiv = buttons[0].querySelector(".orbit");
+
+          // If the orbit div exists, add the 'visible' class to it
+          if (orbitDiv) {
+            orbitDiv.classList.add("visible");
+          }
+        }
+        document.querySelector(".set1").classList.add("visible");
+
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+
+          // reset all buttons
+          buttons.forEach((b) => b.classList.remove("active"));
+          buttons.forEach((b) =>
+            b.querySelector(".orbit").classList.remove("visible")
+          );
+          btn.classList.add("active");
+          btn.querySelector(".orbit").classList.add("visible");
+
+          // show matching item
+          document
+            .querySelectorAll(".skill-set > [class^='set']")
+            .forEach((set) => set.classList.remove("visible"));
+          const activeSet = document.querySelector(`.set${btn.dataset.value}`);
+          if (activeSet) activeSet.classList.add("visible");
+        });
+      })();
+    </script>
+  </body>
+</html>
