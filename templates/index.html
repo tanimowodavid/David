@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +15,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <!-- Hero Section -->
@@ -31,7 +30,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="#bio">BIO</a></li>
             <li><a href="#project">PROJECT</a></li>
-            <li><a href="#blog">BLOG</a></li>
+            <!-- <li><a href="#blog">BLOG</a></li> -->
             <li><a href="#main">CONTACT</a></li>
             <li><button id="theme-toggle"></button></li>
           </ul>
@@ -124,7 +123,7 @@
             <div class="set1">
               <h5 class="set-title">Technical Skill</h5>
               <li>
-                HTML/CSS/JS <i class="bi bi-filetype-html"></i
+                HTML/static/blog/JS <i class="bi bi-filetype-html"></i
                 ><i class="bi bi-filetype-css"></i
                 ><i class="bi bi-filetype-js"></i>
               </li>
@@ -157,7 +156,7 @@
     <hr />
 
     <!-- P R O J E C T  -->
-    <section class="project-wrapper" id="project">
+    <!-- <section class="project-wrapper" id="project">
       <div class="padded">
         <h1>What Have I Done?</h1>
         <div class="project">
@@ -176,12 +175,72 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+    <!-- Q U O T E S  -->
+    <section class="quote-wrapper">
+      <div id="visitor-wall" class="wall">
+        <h2>3 visitors left a quote</h2>
+        <!-- Avatars -->
+        <div class="avatar-row">
+          {% for q in quotes[:] %}
+          <button
+            class="quote-toggle"
+            data-quote="{{ q.quote }}"
+            data-name="{{ q.name }}"
+            data-avatar="{{ q.avatar }}"
+          >
+            <img src="{{ q.avatar }}" class="avatar" />
+          </button>
+          {% endfor %}
+        </div>
+        <!-- Main quote display -->
+        <div id="main-quote" class="quote-box">
+          {% if quotes %}
+          <p class="quote-mark"><i class="bi bi-quote"></i></p>
+          <p>{{ quotes[0].quote }}</p>
+          <span>— {{ quotes[0].name }}</span>
+          {% else %}
+          <p>No quotes yet. Be the first! ✍️</p>
+          {% endif %}
+        </div>
+
+        <!-- Leave a mark button -->
+        <button id="leave-mark" class="mark-btn">
+          <i class="bi bi-pen"></i> Leave a mark
+        </button>
+
+        <!-- Modal -->
+        <form>
+          <div id="quote-modal" class="modal hidden">
+            <div class="modal-content">
+              <h3>Leave a Mark</h3>
+              <input
+                type="text"
+                id="name-input"
+                required
+                placeholder="Your name"
+              />
+              <textarea
+                id="quote-input"
+                placeholder="Your quote"
+                maxlength="200"
+                required
+              ></textarea>
+              <p id="char-count">0/200</p>
+              <button id="submit-quote" class="submit-btn">Submit</button>
+              <button id="close-modal" class="close-btn">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
+
     <!-- C O N T A C T -->
     <section id="main">
       <div class="padded">
         <header>
-          <span class="avatar"
+          <span class="profile-picture"
             ><img src="static/images/David.png" alt=""
           /></span>
           <h1>Tanimowo David</h1>
@@ -191,7 +250,7 @@
         <footer>
           <ul class="icons">
             <li>
-              <a href="https://github.com/tanimowo-david" target="_blank"
+              <a href="https://github.com/tanimowodavid" target="_blank"
                 ><i class="bi bi-github"></i
               ></a>
             </li>
@@ -202,7 +261,7 @@
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/tanimowo-david"
+                href="https://www.linkedin.com/in/tanimowodavid"
                 target="_blank"
                 ><i class="bi bi-linkedin"></i
               ></a>
@@ -215,10 +274,9 @@
           </ul>
           <!-- Footer -->
           <div id="footer">
-            <ul class="copyright">
-              <li>&copy; 2025</li>
-              <li>Made with love ❤️</li>
-            </ul>
+            <p class="copyright">
+              &copy; 2025 Tanimowo David | Built with python & ❤️
+            </p>
           </div>
         </footer>
       </div>

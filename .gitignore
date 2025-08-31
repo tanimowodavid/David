@@ -1,5 +1,29 @@
-.vscode
-__pycache__
-check.html
-keep.txt
-venv
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Environment variables
+*.env
+
+# SQLite database
+*.db
+instance/
+*.sqlite3
+
+# IDE/editor stuff
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
