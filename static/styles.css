@@ -1,7 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
 * {
   box-sizing: border-box;
-  /* outline: 1px solid red; */
 }
 
 :root {
@@ -41,6 +40,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .padded {
   width: 80%;
   margin: auto;
@@ -220,25 +220,37 @@ ul {
 /* B I O  */
 .bio {
   position: relative;
-}
-.dots {
-  position: absolute;
-  height: 150px;
-  width: auto;
-  left: -150px;
-  bottom: 400px;
-}
-.dots:nth-of-type(2) {
-  bottom: 50px;
-  left: -150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
-.bio p {
-  margin-left: 40vw;
+.bio-video,
+.bio-text {
+  /* margin-left: 40vw; */
+  flex: 1;
+  font-family: var(--title-font);
+}
+
+.bio-video {
+  width: 100%; /* Or any other width you want */
+  max-width: 640px; /* Example max-width */
+  margin: auto;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--text-color);
+  aspect-ratio: 16/9; /* Use this to maintain a 16:9 aspect ratio */
+}
+
+.bio-video video {
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 768px) {
-  .bio p {
-    margin-left: 20vw;
+  .bio {
+    /* padding-top: 2rem; */
+    flex-direction: column;
   }
 }
 /* S K I L L S  */
@@ -261,7 +273,6 @@ ul {
 }
 .btn-group button {
   position: relative;
-  /* flex: 0 0 auto; */
   padding: 10px;
   border: 1px solid var(--text-color);
   color: var(--text-color);
@@ -314,12 +325,10 @@ ul {
     flex-direction: column;
   }
   .skill-set {
-    /* flex: 0 0 80%; */
     width: 90%;
   }
 
   #floatingdev {
-    /* flex: 1 1 80%; */
     width: 90%;
   }
 }
