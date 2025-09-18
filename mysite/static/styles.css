@@ -18,7 +18,7 @@
   --footer-font: "Source Sans Pro", Helvetica, sans-serif;
 }
 /* Dark Theme */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --text-color: #e7dfd8;
   --secondary-color: #1d1a1a;
   --base-color: #231f20;
@@ -28,6 +28,17 @@
   --orbit-shadow2: rgba(255, 0, 0, 0.2);
   --orbit-shadow3: rgba(255, 0, 0, 0.1);
   --footer-color: #313131;
+} */
+[data-theme="dark"] {
+  --text-color: #176c11;
+  --secondary-color: #0c120d;
+  --base-color: #0b0c0b;
+  --orbit-color1: #ff0000;
+  --orbit-color2: #ff6200;
+  --orbit-shadow1: rgba(255, 0, 0, 0.4);
+  --orbit-shadow2: rgba(255, 0, 0, 0.2);
+  --orbit-shadow3: rgba(255, 0, 0, 0.1);
+  --footer-color: #0b0c0b;
 }
 html,
 body {
@@ -66,7 +77,8 @@ body {
 hr {
   margin: 0;
   line-height: 1px;
-  color: var(--secondary-color);
+  border: none;
+  border-top: 1px solid var(--orbit-shadow2);
   width: 100%;
 }
 h1 {
@@ -645,7 +657,7 @@ ul.icons li a:hover {
 .mark-btn {
   padding: 8px 12px;
   background: var(--orbit-color1);
-  color: var(--text-color);
+  color: var(--secondary-color);
   border: none;
   border-radius: 6px;
   cursor: pointer;

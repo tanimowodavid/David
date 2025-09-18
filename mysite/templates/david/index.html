@@ -162,7 +162,7 @@
     <hr />
 
     <!-- P R O J E C T  -->
-    <!-- <section class="project-wrapper" id="project">
+    <section class="project-wrapper" id="project">
       <div class="padded">
         <h1>What Have I Done?</h1>
         <div class="project">
@@ -170,18 +170,52 @@
             <img src="static/images/blogpic.png" alt="" />
           </div>
           <div class="project-description">
-            <h3>Blog</h3>
+            <h3>RetireSmart</h3>
             <p>
-              I created a blog using flask to write about how pissed i am
-              considering the fact that you yes - can give me a small project
-              and send a lot of money but you just choose to keep smiling. I
-              dont even know whats funny 😠
+              An AI-driven app that shows how inflation can affect your
+              retirement needs and gives advice for a secure future.
             </p>
-            <div class="project-links"><a href="">github</a></div>
+            <div class="project-links">
+              <a href="">github</a>
+              <a href="{{ url_for('retirement.index') }}">visit</a>
+              <a href="">details</a>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="project">
+          <div class="project-img">
+            <img src="static/images/todo.avif" alt="" />
+          </div>
+          <div class="project-description">
+            <h3>Todo app</h3>
+            <p>
+              A RESTful task management API built with Flask featuring JWT
+              authentication, SQLAlchemy ORM, and full CRUD operations.
+            </p>
+            <div class="project-links">
+              <a href="">github</a>
+              <a href="">details</a>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="project">
+          <div class="project-img">
+            <img src="static/images/todo.avif" alt="" />
+          </div>
+          <div class="project-description">
+            <h3>This site</h3>
+            <p>My very own website with a quote wall and neat UI.</p>
+            <div class="project-links">
+              <a href="">github</a>
+              <a href="">details</a>
+              <a href="">visit</a>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Q U O T E S  -->
     <section class="quote-wrapper">
