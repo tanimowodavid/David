@@ -1,366 +1,276 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanimowo David</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/static/favivon_io/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/static/favivon_io/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/static/favivon_io/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/static/favivon_io/site.webmanifest" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="/static/styles.css" />
-  </head>
-  <body>
-    <!-- Hero Section -->
-    <header class="hero-wrapper" id="home">
-      <!-- Navbar -->
-      <div class="nav-holder">
-        <nav class="navbar">
-          <a href="#home"
-            ><img src="static/images/td-logo1.png" alt="logo" class="logo"
-          /></a>
+{% extends 'layout.html' %} {% block title %}Tanimowo David{% endblock %} {%
+block content %}
+<!-- Hero Section -->
+<header class="hero-wrapper" id="home">
+  <!-- Navbar -->
+  {% include 'nav.html' %}
 
-          <ul class="nav-links" id="navLinks">
-            <li><a href="#bio">BIO</a></li>
-            <li><a href="#project">PROJECT</a></li>
-            <!-- <li><a href="#blog">BLOG</a></li> -->
-            <li><a href="#main">CONTACT</a></li>
-            <li><button id="theme-toggle"></button></li>
-          </ul>
-          <div class="menu-toggle" id="menuToggle">
-            <i class="bi bi-hdd-stack"></i>
-          </div>
-        </nav>
-      </div>
-
-      <div class="hero padded">
-        <div class="intro">
-          <div class="intro-text">
-            <h1 class="">Tanimowo</h1>
-            <h1 class="">David</h1>
-            <p class="open-sans-regular">Hello 👋, I'm a Backend Developer</p>
-            <div class="mobile">
-              <br /><br />
-              <a href="#main" class="find-me mobile"
-                ><button>&lt; Find me &sol;&gt;</button></a
-              >
-            </div>
-          </div>
-          <div id="sittingdev"></div>
-        </div>
-        <a href="#main" class="find-me pc"
-          ><button>&lt; Find me &sol;&gt;</button></a
-        >
-      </div>
-    </header>
-    <hr />
-
-    <!-- B I O  -->
-    <section class="bio-wrapper" id="bio">
-      <div class="padded">
-        <h1>Bio</h1>
-        <div class="bio">
-          <div class="bio-text">
-            <p>
-              Tanimowo David is a Junior Backend Developer with hands-on
-              experience building and deploying backend projects using Python,
-              Django, SQL, and APIs. He is passionate about creating reliable
-              systems that power applications and make technology more
-              accessible. Currently advancing his expertise through the ALX
-              ProDev Backend program, David aspires to contribute to global tech
-              companies in research, entertainment, and design. Recognized for
-              his problem-solving mindset, resourcefulness, and teamwork, he is
-              focused on growing into a backend engineer who builds scalable
-              systems that solve real-world problems.
-            </p>
-          </div>
-          <div class="bio-video">
-            video soon
-            <video poster=""></video>
-          </div>
-        </div>
-
-        <br /><br />
-      </div>
-    </section>
-
-    <!-- S K I L L S  -->
-    <section class="skill-wrapper">
-      <div class="padded">
-        <h1>Top Skills</h1>
-        <div class="skills">
-          <div class="skill-set">
-            <div class="btn-group" id="myBtnGroup" data-single="true">
-              <button data-value="1">
-                <i class="bi bi-person-fill-gear"></i>
-                <div class="orbit"></div>
-              </button>
-              <div class="separator"></div>
-              <button data-value="2">
-                <i class="bi bi-person-heart"></i>
-                <div class="orbit"></div>
-              </button>
-            </div>
-            <div class="set1">
-              <h5 class="set-title">Technical Skill</h5>
-              <li>
-                HTML/CSS/JS <i class="bi bi-filetype-html"></i
-                ><i class="bi bi-filetype-css"></i
-                ><i class="bi bi-filetype-js"></i>
-              </li>
-              <li>
-                Flask/Django <i class="bi bi-boxes"></i
-                ><i class="bi bi-braces"></i>
-              </li>
-              <li>RESTful API <i class="bi bi-diagram-3"></i></li>
-              <li>
-                Git/GitHub<i class="bi bi-git"></i><i class="bi bi-github"></i>
-              </li>
-              <li>Databases (SQL/NoSQL) <i class="bi bi-database"></i></li>
-            </div>
-            <div class="set2">
-              <h5 class="set-title">Soft Skill</h5>
-              <li>
-                Problem-Solving <i class="bi bi-puzzle"></i
-                ><i class="bi bi-lightbulb"></i>
-              </li>
-              <li>Communication <i class="bi bi-chat-dots"></i></li>
-              <li>Collaboration <i class="bi bi-people"></i></li>
-              <li>Adaptability <i class="bi bi-arrow-repeat"></i></li>
-              <li>Attention to Detail <i class="bi bi-search"></i></li>
-            </div>
-          </div>
-          <div id="floatingdev"></div>
-        </div>
-      </div>
-    </section>
-    <hr />
-
-    <!-- P R O J E C T  -->
-    <section class="project-wrapper" id="project">
-      <div class="padded">
-        <h1>What Have I Done?</h1>
-        <div class="project">
-          <div class="project-img">
-            <img src="static/images/blogpic.png" alt="" />
-          </div>
-          <div class="project-description">
-            <h3>RetireSmart</h3>
-            <p>
-              An AI-driven app that shows how inflation can affect your
-              retirement needs and gives advice for a secure future.
-            </p>
-            <div class="project-links">
-              <a href="">github</a>
-              <a href="{{ url_for('retirement.index') }}">visit</a>
-              <a href="">details</a>
-            </div>
-          </div>
-        </div>
-        <br /><br />
-        <div class="project">
-          <div class="project-img">
-            <img src="static/images/todo.avif" alt="" />
-          </div>
-          <div class="project-description">
-            <h3>Todo app</h3>
-            <p>
-              A RESTful task management API built with Flask featuring JWT
-              authentication, SQLAlchemy ORM, and full CRUD operations.
-            </p>
-            <div class="project-links">
-              <a href="">github</a>
-              <a href="">details</a>
-            </div>
-          </div>
-        </div>
-        <br /><br />
-        <div class="project">
-          <div class="project-img">
-            <img src="static/images/todo.avif" alt="" />
-          </div>
-          <div class="project-description">
-            <h3>This site</h3>
-            <p>My very own website with a quote wall and neat UI.</p>
-            <div class="project-links">
-              <a href="">github</a>
-              <a href="">details</a>
-              <a href="">visit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Q U O T E S  -->
-    <section class="quote-wrapper">
-      <div id="visitor-wall" class="wall">
-        <h2>3 visitors left a quote</h2>
-        <!-- Avatars -->
-        <div class="avatar-row">
-          {% for q in quotes[:] %}
-          <button
-            class="quote-toggle"
-            data-quote="{{ q.quote }}"
-            data-name="{{ q.name }}"
-            data-avatar="{{ q.avatar }}"
+  <div class="hero padded">
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="">Tanimowo</h1>
+        <h1 class="">David</h1>
+        <p class="open-sans-regular">Hello 👋, I'm a Backend Developer</p>
+        <div class="mobile">
+          <br /><br />
+          <a href="#main" class="find-me mobile"
+            ><button>&lt; Find me &sol;&gt;</button></a
           >
-            <img src="{{ q.avatar }}" class="avatar" />
+        </div>
+      </div>
+      <div id="sittingdev"></div>
+    </div>
+    <a href="#main" class="find-me pc"
+      ><button>&lt; Find me &sol;&gt;</button></a
+    >
+  </div>
+</header>
+<hr />
+
+<!-- B I O  -->
+<section class="bio-wrapper" id="bio">
+  <div class="padded">
+    <h1>Bio</h1>
+    <div class="bio">
+      <div class="bio-text">
+        <p>
+          Tanimowo David is a Junior Backend Developer with hands-on experience
+          building and deploying backend projects using Python, Django, SQL, and
+          APIs. He is passionate about creating reliable systems that power
+          applications and make technology more accessible. Currently advancing
+          his expertise through the ALX ProDev Backend program, David aspires to
+          contribute to global tech companies in research, entertainment, and
+          design. Recognized for his problem-solving mindset, resourcefulness,
+          and teamwork, he is focused on growing into a backend engineer who
+          builds scalable systems that solve real-world problems.
+        </p>
+      </div>
+      <div class="bio-video">
+        video soon
+        <video poster=""></video>
+      </div>
+    </div>
+
+    <br /><br />
+  </div>
+</section>
+
+<!-- S K I L L S  -->
+<section class="skill-wrapper">
+  <div class="padded">
+    <h1>Top Skills</h1>
+    <div class="skills">
+      <div class="skill-set">
+        <div class="btn-group" id="myBtnGroup" data-single="true">
+          <button data-value="1">
+            <i class="bi bi-person-fill-gear"></i>
+            <div class="orbit"></div>
           </button>
-          {% endfor %}
+          <div class="separator"></div>
+          <button data-value="2">
+            <i class="bi bi-person-heart"></i>
+            <div class="orbit"></div>
+          </button>
         </div>
-        <!-- Main quote display -->
-        <div id="main-quote" class="quote-box">
-          {% if quotes %}
-          <p class="quote-mark"><i class="bi bi-quote"></i></p>
-          <p>{{ quotes[0].quote }}</p>
-          <span>— {{ quotes[0].name }}</span>
-          {% else %}
-          <p>No quotes yet. Be the first! ✍️</p>
-          {% endif %}
+        <div class="set1">
+          <h5 class="set-title">Technical Skill</h5>
+          <li>
+            HTML/CSS/JS <i class="bi bi-filetype-html"></i
+            ><i class="bi bi-filetype-css"></i><i class="bi bi-filetype-js"></i>
+          </li>
+          <li>
+            Flask/Django <i class="bi bi-boxes"></i><i class="bi bi-braces"></i>
+          </li>
+          <li>RESTful API <i class="bi bi-diagram-3"></i></li>
+          <li>
+            Git/GitHub<i class="bi bi-git"></i><i class="bi bi-github"></i>
+          </li>
+          <li>Databases (SQL/NoSQL) <i class="bi bi-database"></i></li>
         </div>
-
-        <!-- Leave a mark button -->
-        <button id="leave-mark" class="mark-btn">
-          <i class="bi bi-pen"></i> Leave a mark
-        </button>
-
-        <!-- Modal -->
-        <form>
-          <div id="quote-modal" class="modal hidden">
-            <div class="modal-content">
-              <h3>Leave a Mark</h3>
-              <input
-                type="text"
-                id="name-input"
-                required
-                placeholder="Your name"
-              />
-              <textarea
-                id="quote-input"
-                placeholder="Your quote"
-                maxlength="200"
-                required
-              ></textarea>
-              <p id="char-count">0/200</p>
-              <button id="submit-quote" class="submit-btn">Submit</button>
-              <button id="close-modal" class="close-btn">Cancel</button>
-            </div>
-          </div>
-        </form>
+        <div class="set2">
+          <h5 class="set-title">Soft Skill</h5>
+          <li>
+            Problem-Solving <i class="bi bi-puzzle"></i
+            ><i class="bi bi-lightbulb"></i>
+          </li>
+          <li>Communication <i class="bi bi-chat-dots"></i></li>
+          <li>Collaboration <i class="bi bi-people"></i></li>
+          <li>Adaptability <i class="bi bi-arrow-repeat"></i></li>
+          <li>Attention to Detail <i class="bi bi-search"></i></li>
+        </div>
       </div>
-    </section>
+      <div id="floatingdev"></div>
+    </div>
+  </div>
+</section>
+<hr />
 
-    <!-- C O N T A C T -->
-    <section id="main">
-      <div class="padded">
-        <header>
-          <span class="profile-picture"
-            ><img src="static/images/David.png" alt=""
-          /></span>
-          <!-- <h1>Tanimowo David</h1> -->
-          <p>Connect with me</p>
-        </header>
-
-        <footer>
-          <ul class="icons">
-            <li>
-              <a href="https://github.com/tanimowodavid" target="_blank"
-                ><i class="bi bi-github"></i
-              ></a>
-            </li>
-            <li>
-              <a href="mailto:davidtanimowo01@gmail.com"
-                ><i class="bi bi-envelope"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/tanimowodavid"
-                target="_blank"
-                ><i class="bi bi-linkedin"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://wa.me/+2349130739626" target="_blank"
-                ><i class="bi bi-whatsapp"></i
-              ></a>
-            </li>
-          </ul>
-          <!-- Footer -->
-          <div id="footer">
-            <p class="copyright">
-              &copy; 2025 Tanimowo David | Built with python & ❤️
-            </p>
-          </div>
-        </footer>
+<!-- P R O J E C T  -->
+<section class="project-wrapper" id="project">
+  <div class="padded">
+    <h1>What Have I Done?</h1>
+    <div class="project">
+      <div class="project-img">
+        <img
+          src="{{ url_for('static', filename='images/retire.png') }}"
+          alt=""
+        />
       </div>
-    </section>
+      <div class="project-description">
+        <h3>RetireSmart</h3>
+        <p>
+          A financial planning app with AI-powered advice, book recommendations,
+          and a spending projection chart to help you prepare for the future.
+        </p>
+        <div class="project-links">
+          <!-- <a href="">github</a> -->
+          <a href="{{ url_for('retirement.index') }}">visit</a>
+          <a href="{{ url_for('projects.retirement') }}">details</a>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="project">
+      <div class="project-img">
+        <img src="static/images/todo.png" alt="" />
+      </div>
+      <div class="project-description">
+        <h3>Task Manager API</h3>
+        <p>
+          A RESTful task management API built with Flask featuring JWT
+          authentication, SQLAlchemy ORM, and full CRUD operations.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/tanimowodavid/Todo-app">github</a>
+          <a href="{{ url_for('projects.todo') }}">details</a>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="project">
+      <div class="project-img">
+        <img src="static/images/mysite.png" alt="" />
+      </div>
+      <div class="project-description">
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A responsive Flask-based portfolio site with dark mode, PostgreSQL
+          integration, and a unique quote wall for visitors.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/tanimowodavid/David">github</a>
+          <a href="{{ url_for('projects.david') }}">details</a>
+          <a href="javascript:void(0)" data-tooltip="You are already here 😎"
+            >visit</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="static/index.js"></script>
-    <script>
-      (function () {
-        const group = document.getElementById("myBtnGroup");
-        const buttons = Array.from(group.querySelectorAll("button"));
+<!-- Q U O T E S  -->
+<section class="quote-wrapper">
+  <div id="visitor-wall" class="wall">
+    <h2>3 visitors left a quote</h2>
+    <!-- Avatars -->
+    <div class="avatar-row">
+      {% for q in quotes[:] %}
+      <button
+        class="quote-toggle"
+        data-quote="{{ q.quote }}"
+        data-name="{{ q.name }}"
+        data-avatar="{{ q.avatar }}"
+      >
+        <img src="{{ q.avatar }}" class="avatar" />
+      </button>
+      {% endfor %}
+    </div>
+    <!-- Main quote display -->
+    <div id="main-quote" class="quote-box">
+      {% if quotes %}
+      <p class="quote-mark"><i class="bi bi-quote"></i></p>
+      <p>{{ quotes[0].quote }}</p>
+      <span>— {{ quotes[0].name }}</span>
+      {% else %}
+      <p>No quotes yet. Be the first! ✍️</p>
+      {% endif %}
+    </div>
 
-        // Initially
-        buttons[0].classList.add("active");
-        if (buttons[0]) {
-          // Grab the div with class 'orbit' inside the first button
-          const orbitDiv = buttons[0].querySelector(".orbit");
+    <!-- Leave a mark button -->
+    <button id="leave-mark" class="mark-btn">
+      <i class="bi bi-pen"></i> Leave a mark
+    </button>
 
-          // If the orbit div exists, add the 'visible' class to it
-          if (orbitDiv) {
-            orbitDiv.classList.add("visible");
-          }
-        }
-        document.querySelector(".set1").classList.add("visible");
+    <!-- Modal -->
+    <form>
+      <div id="quote-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Leave a Mark</h3>
+          <input type="text" id="name-input" required placeholder="Your name" />
+          <textarea
+            id="quote-input"
+            placeholder="Your quote"
+            maxlength="200"
+            required
+          ></textarea>
+          <p id="char-count">0/200</p>
+          <button id="submit-quote" class="submit-btn">Submit</button>
+          <button id="close-modal" class="close-btn">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script>
+  (function () {
+    const group = document.getElementById("myBtnGroup");
+    const buttons = Array.from(group.querySelectorAll("button"));
 
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
+    // Initially
+    buttons[0].classList.add("active");
+    if (buttons[0]) {
+      // Grab the div with class 'orbit' inside the first button
+      const orbitDiv = buttons[0].querySelector(".orbit");
 
-          // reset all buttons
-          buttons.forEach((b) => b.classList.remove("active"));
-          buttons.forEach((b) =>
-            b.querySelector(".orbit").classList.remove("visible")
-          );
-          btn.classList.add("active");
-          btn.querySelector(".orbit").classList.add("visible");
+      // If the orbit div exists, add the 'visible' class to it
+      if (orbitDiv) {
+        orbitDiv.classList.add("visible");
+      }
+    }
+    document.querySelector(".set1").classList.add("visible");
 
-          // show matching item
-          document
-            .querySelectorAll(".skill-set > [class^='set']")
-            .forEach((set) => set.classList.remove("visible"));
-          const activeSet = document.querySelector(`.set${btn.dataset.value}`);
-          if (activeSet) activeSet.classList.add("visible");
-        });
-      })();
-    </script>
-  </body>
-</html>
+    group.addEventListener("click", (e) => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+
+      // reset all buttons
+      buttons.forEach((b) => b.classList.remove("active"));
+      buttons.forEach((b) =>
+        b.querySelector(".orbit").classList.remove("visible")
+      );
+      btn.classList.add("active");
+      btn.querySelector(".orbit").classList.add("visible");
+
+      // show matching item
+      document
+        .querySelectorAll(".skill-set > [class^='set']")
+        .forEach((set) => set.classList.remove("visible"));
+      const activeSet = document.querySelector(`.set${btn.dataset.value}`);
+      if (activeSet) activeSet.classList.add("visible");
+    });
+  })();
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+  });
+</script>
+
+{% endblock %}

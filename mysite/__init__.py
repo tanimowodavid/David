@@ -32,8 +32,9 @@ def create_app(test_config=None):
         db.create_all()
 
     # Register Blueprints
-    from . import david, retirement
+    from . import david, retirement, projects
     app.register_blueprint(david.bp)
+    app.register_blueprint(projects.bp)
     app.register_blueprint(retirement.bp)
     app.add_url_rule('/', endpoint='index')
 

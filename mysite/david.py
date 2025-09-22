@@ -9,7 +9,7 @@ bp = Blueprint('david', __name__)
 @bp.route('/')
 def index():
     last_quotes = VisitorQuote.query.order_by(VisitorQuote.created_at.desc()).limit(3).all()
-    return render_template('david/index.html', quotes=last_quotes)
+    return render_template('david/index.html', quotes=last_quotes, home=True)
 
 # Add a new quote
 @bp.route('/add-quote', methods=['POST'])

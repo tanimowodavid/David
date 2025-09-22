@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} {% block title %}Tanimowo David{% endblock %} {%
+block content %} {% include 'nav.html' %}
+
+<section class="bio-wrapper">
+  <div class="padded">
+    <h1>Personal Website</h1>
+    <span><h5>tanimowodavid.com</h5></span>
+    <div class="project-detail">
+      <div class="details">
+        <img
+          src="{{ url_for('static', filename='images/mysite.png') }}"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          I designed and built this site from the ground up using Flask and
+          followed best practices for structuring scalable applications. The
+          site is fully responsive, works seamlessly on both mobile and desktop,
+          and includes a built-in dark mode for a modern user experience.
+          <br /><br />
+          At its core, the site introduces me and showcases the projects I’ve
+          worked on, but I wanted it to be more than just another developer
+          portfolio. That’s why I added a Quote Wall — an interactive space
+          where visitors can leave their own comments. The last three
+          submissions appear directly on the site, creating a living,
+          collaborative feature. The idea came to me after visiting a site that
+          displayed a motivational quote; I wished I could change it and thought
+          others might feel the same. This feature makes my site not only
+          personal but also participatory. <br /><br />From a technical
+          perspective, the site is deployed on Render and uses PostgreSQL for
+          data persistence. This demonstrates my ability to not just develop but
+          also deploy and manage a production-ready web application. Building
+          this project has been both a personal and professional milestone. It
+          reflects my creativity, problem-solving approach, and passion for
+          creating meaningful digital experiences.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

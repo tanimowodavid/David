@@ -81,6 +81,7 @@ def calculate():
 
     Give them personalized advice and recommend ONE book in this format:
     Book: <Title> — <Author>
+    Do not add extra characters, quotation marks, or Markdown around the title/author.
     """
 
     ai_response = client.chat.completions.create(
@@ -95,6 +96,8 @@ def calculate():
     # Extract book title & author
     book_title, book_author, cover_url = None, None, None
     match = re.search(r'Book:\s*(.+?)\s*—\s*(.+)', ai_text)
+
+
     if match:
         book_title = match.group(1).strip()
         book_author = match.group(2).strip()
@@ -124,4 +127,7 @@ def calculate():
 
     return jsonify(result), 200
 
+@bp.route('/results')
+def results_page():
+    return render_template("retirement/result.html")
 

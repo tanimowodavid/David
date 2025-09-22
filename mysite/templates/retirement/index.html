@@ -1,81 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Retirement Awareness Tool</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetireSmart</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS  -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
     />
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <!-- CSS  -->
     <style>
       body {
-        background: #f8fafc;
-      }
-      .card {
-        max-width: 960px;
-        margin: 2rem auto;
-      }
-      .muted {
-        color: #6c757d;
-      }
-      #bookCard img {
-        width: 96px;
-        height: 140px;
-        object-fit: cover;
-      }
-      pre {
-        background: #f1f5f9;
-        padding: 1rem;
-        border-radius: 6px;
-        overflow: auto;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+          ),
+          url("{{ url_for('static', filename='retirement/background.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* min-height: 100vh; */
+        color: #ffffff;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h3 class="card-title mb-1">Retirement Awareness Tool</h3>
-          <p class="muted mb-3">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 text-primary mb-3">
+            Retirement Awareness Tool
+          </h1>
+          <p class="col-lg-10 fs-4">
             Enter a few numbers to see how inflation affects your future
             spending and whether your savings are enough.
           </p>
-
-          <!-- form -->
-          <form id="calcForm" class="row g-3 mb-3">
-            <div class="col-md-3">
-              <label for="current_age" class="form-label">Current age</label>
-              <input
-                id="current_age"
-                class="form-control"
-                type="number"
-                min="0"
-                required
-              />
-            </div>
-            <div class="col-md-3">
-              <label for="retirement_age" class="form-label"
-                >Retirement age</label
-              >
-              <input
-                id="retirement_age"
-                class="form-control"
-                type="number"
-                min="0"
-                required
-              />
-            </div>
-            <div class="col-md-3">
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+          <form class="row g-3" id="calcForm">
+            <div class="col-md-12">
               <label for="annual_income" class="form-label"
-                >Annual income</label
-              >
+                >Annual Income
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="How much do you earn in a year?"
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
               <input
                 id="annual_income"
                 class="form-control"
@@ -85,10 +66,17 @@
                 required
               />
             </div>
-            <div class="col-md-3">
+            <div class="col-md-12">
               <label for="annual_spending" class="form-label"
-                >Annual spending</label
-              >
+                >Annual Spending
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="How much do you spend in a year?"
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
               <input
                 id="annual_spending"
                 class="form-control"
@@ -98,24 +86,78 @@
                 required
               />
             </div>
+            <div class="col-6">
+              <label for="current_age" class="form-label"
+                >Current Age
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="How old are you currently?"
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
+              <input
+                id="current_age"
+                class="form-control"
+                type="number"
+                min="0"
+                required
+              />
+            </div>
+            <div class="col-6">
+              <label for="retirement_age" class="form-label"
+                >Retirement Age
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="At what age do you plan to retire?"
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
+              <input
+                id="retirement_age"
+                class="form-control"
+                type="number"
+                min="0"
+                required
+              />
+            </div>
 
             <div class="col-md-4">
               <label for="current_savings" class="form-label"
-                >Current savings (optional)</label
-              >
+                >Savings
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="How much do you currently have in savings?"
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
               <input
                 id="current_savings"
                 class="form-control"
                 type="number"
                 min="0"
                 step="0.01"
-                placeholder="0"
+                value="0"
+                required
               />
             </div>
+
             <div class="col-md-4">
               <label for="inflation_rate" class="form-label"
-                >Inflation rate (%)</label
-              >
+                >Influation %
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Influation reduces the purchasing power of your money over time. A higher rate means your money will lose value faster."
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
               <input
                 id="inflation_rate"
                 class="form-control"
@@ -123,295 +165,88 @@
                 min="0"
                 step="0.01"
                 value="3"
+                required
               />
             </div>
             <div class="col-md-4">
               <label for="life_expectancy" class="form-label"
-                >Life expectancy</label
-              >
+                >Life Exp
+                <span
+                  href="javascript:void(0)"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="How long do you expect to live? This helps in planning your retirement funds."
+                  ><i class="bi bi-info-circle"></i></span
+              ></label>
               <input
                 id="life_expectancy"
                 class="form-control"
                 type="number"
-                min="60"
+                min="50"
                 value="100"
+                required
               />
             </div>
+            <div
+              id="error"
+              class="text-danger mb-3"
+              role="alert"
+              style="display: none"
+            ></div>
 
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Calculate</button>
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="resetBtn"
-              >
-                Reset
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span
+                  id="btnSpinner"
+                  class="spinner-border spinner-border-sm d-none"
+                ></span>
+                Calculate
               </button>
             </div>
           </form>
-
-          <div
-            id="error"
-            class="text-danger mb-3"
-            role="alert"
-            style="display: none"
-          ></div>
-
-          <!-- results -->
-          <div id="results" class="d-none">
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div class="p-3 bg-white rounded shadow-sm">
-                  <div class="text-muted small">Total needed</div>
-                  <div class="fs-5 fw-semibold" id="total_needed">$0</div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="p-3 bg-white rounded shadow-sm">
-                  <div class="text-muted small">Possible by retirement</div>
-                  <div class="fs-5 fw-semibold" id="total_possible_savings">
-                    $0
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="p-3 bg-white rounded shadow-sm">
-                  <div class="text-muted small">Monthly required</div>
-                  <div class="fs-5 fw-semibold" id="monthly_required">N/A</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-4 p-3 bg-white rounded shadow-sm">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h5 class="mb-1">AI Advice</h5>
-                  <p id="ai_advice" class="mb-1"></p>
-                  <div class="text-muted" id="status_line"></div>
-                </div>
-
-                <!-- book card -->
-                <div
-                  id="bookCard"
-                  class="d-none ms-3 text-center"
-                  style="min-width: 160px"
-                >
-                  <img
-                    id="bookCover"
-                    src=""
-                    alt="Book cover"
-                    class="mb-2 rounded"
-                  />
-                  <div id="bookTitle" class="fw-bold"></div>
-                  <div id="bookAuthor" class="muted small"></div>
-                </div>
-              </div>
-
-              <div class="mt-3">
-                <button id="detailsBtn" class="btn btn-sm btn-info">
-                  View details
-                </button>
-              </div>
-
-              <!-- details area -->
-              <div id="detailsSection" class="mt-3 d-none">
-                <div class="row">
-                  <div class="col-md-7">
-                    <canvas id="projectionChart" height="200"></canvas>
-                  </div>
-                  <div class="col-md-5">
-                    <h6 class="mb-2">Projection (age → spending)</h6>
-                    <div style="max-height: 300px; overflow: auto">
-                      <table class="table table-sm">
-                        <thead>
-                          <tr>
-                            <th>Age</th>
-                            <th class="text-end">Spending</th>
-                          </tr>
-                        </thead>
-                        <tbody id="projectionBody"></tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- AI card end -->
-          </div>
-          <!-- results end -->
         </div>
       </div>
     </div>
-
-    <script>
-      // helpers
-      const $ = (id) => document.getElementById(id);
-      const fmt = (n) =>
-        new Intl.NumberFormat("en-US", {
-          style: "currency",
-          currency: "USD",
-        }).format(n);
-
-      const form = $("calcForm");
-      const resultsDiv = $("results");
-      const detailsBtn = $("detailsBtn");
-      const detailsSection = $("detailsSection");
-      const resetBtn = $("resetBtn");
-      const errorDiv = $("error");
-      let chartInstance = null;
-
-      function showError(msg) {
-        errorDiv.style.display = "block";
-        errorDiv.textContent = msg;
-      }
-      function clearError() {
-        errorDiv.style.display = "none";
-        errorDiv.textContent = "";
-      }
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        clearError();
-
-        // build payload; backend expects inflation_rate as decimal (0.03)
-        const payload = {
-          current_age: Number($("current_age").value),
-          retirement_age: Number($("retirement_age").value),
-          annual_income: Number($("annual_income").value),
-          annual_spending: Number($("annual_spending").value),
-          current_savings: Number($("current_savings").value || 0),
-          inflation_rate: Number($("inflation_rate").value || 3) / 100,
-          life_expectancy: Number($("life_expectancy").value || 100),
-        };
-
-        // simple client-side validation
-        if (
-          !payload.current_age ||
-          !payload.retirement_age ||
-          !payload.annual_income ||
-          !payload.annual_spending
-        ) {
-          showError("Please fill the required fields.");
-          return;
-        }
-
-        // call API
-        try {
-          const resp = await fetch("/retirement/api/calc", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-
-          const data = await resp.json();
-          if (!resp.ok) {
-            showError(data.error || data.details || "Calculation failed");
-            return;
-          }
-
-          // populate summary
-          resultsDiv.classList.remove("d-none");
-          $("total_needed").innerText = fmt(data.total_needed);
-          $("total_possible_savings").innerText = fmt(
-            data.total_possible_savings
-          );
-          $("monthly_required").innerText = data.monthly_required
-            ? fmt(data.monthly_required)
-            : "N/A";
-          $("ai_advice").innerText = data.ai_advice || "";
-          $("status_line").innerText =
-            data.total_possible_savings >= data.total_needed
-              ? "Status: On track"
-              : "Status: Shortfall";
-
-          // book card
-          if (data.book_title && data.book_author) {
-            $("bookTitle").innerText = data.book_title;
-            $("bookAuthor").innerText = "by " + data.book_author;
-            if (data.cover_url) {
-              $("bookCover").src = data.cover_url;
-              $("bookCard").classList.remove("d-none");
-            } else {
-              // no cover, still show title/author
-              $("bookCover").src = "";
-              $("bookCard").classList.remove("d-none");
-            }
-          } else {
-            $("bookCard").classList.add("d-none");
-          }
-
-          // prepare projection table and chart data (but don't show until details pressed)
-          const labels = data.projection.map((p) => p.age);
-          const spending = data.projection.map(
-            (p) => p.inflation_adjusted_spending
-          );
-
-          const tbody = $("projectionBody");
-          tbody.innerHTML = "";
-          data.projection.forEach((row) => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `<td>${row.age}</td><td class="text-end">${fmt(
-              row.inflation_adjusted_spending
-            )}</td>`;
-            tbody.appendChild(tr);
-          });
-
-          // details button handler (recreate chart each time)
-          detailsBtn.onclick = () => {
-            detailsSection.classList.toggle("d-none");
-            if (!detailsSection.classList.contains("d-none")) {
-              // show chart
-              const ctx = document.getElementById("projectionChart");
-              if (chartInstance) chartInstance.destroy();
-              chartInstance = new Chart(ctx, {
-                type: "line",
-                data: {
-                  labels: labels,
-                  datasets: [
-                    {
-                      label: "Inflation-adjusted annual spending",
-                      data: spending,
-                      borderColor: "#0d6efd",
-                      backgroundColor: "rgba(13,110,253,0.08)",
-                      tension: 0.25,
-                      fill: true,
-                      pointRadius: 2,
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  scales: {
-                    x: { title: { display: true, text: "Age" } },
-                    y: {
-                      title: { display: true, text: "Annual spending (USD)" },
-                    },
-                  },
-                  plugins: { legend: { display: false } },
-                },
-              });
-            }
-          };
-
-          // auto-scroll to results
-          resultsDiv.scrollIntoView({ behavior: "smooth" });
-        } catch (err) {
-          console.error(err);
-          showError("Network or server error — try again.");
-        }
-      });
-
-      resetBtn.addEventListener("click", function () {
-        form.reset();
-        resultsDiv.classList.add("d-none");
-        detailsSection.classList.add("d-none");
-        if (chartInstance) {
-          chartInstance.destroy();
-          chartInstance = null;
-        }
-        clearError();
-      });
-    </script>
+    <!-- Footer  -->
+    <footer class="py-3 my-4 bg-body-tertiary">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="https://www.linkedin.com/in/tanimowodavid"
+            class="nav-link px-2 text-body-secondary"
+            >LinkedIn</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://wa.me/+2349130739626"
+            class="nav-link px-2 text-body-secondary"
+            >WhatsApp</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://github.com/tanimowodavid"
+            class="nav-link px-2 text-body-secondary"
+            >Github</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="mailto:davidtanimowo01@gmail.com"
+            class="nav-link px-2 text-body-secondary"
+            >Email</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-body-secondary">&copy; 2025 Tanimowo David</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='retirement/index.js') }}"></script>
   </body>
 </html>

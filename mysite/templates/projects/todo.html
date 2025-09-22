@@ -1,0 +1,39 @@
+{% extends 'layout.html' %} {% block title %}Task Manager API{% endblock %} {%
+block content %} {% include 'nav.html' %}
+<section class="bio-wrapper">
+  <div class="padded">
+    <h1>Task Manager</h1>
+    <span><h5>API</h5></span>
+    <div class="project-detail">
+      <div class="details">
+        <img src="{{ url_for('static', filename='images/todo.png') }}" alt="" />
+        <br /><br />
+        <p>
+          This project is a backend-focused implementation of a Todo API built
+          with Flask. Unlike the basic tutorial approaches that use raw SQLite
+          queries and Flask sessions, I rebuilt the project from the ground up
+          using industry-standard best practices: User Authentication:
+          Implemented secure authentication using JWT tokens instead of
+          traditional Flask sessions, making the API stateless and
+          production-ready. <br /><br />
+          Data Modeling: Migrated from raw SQL to SQLAlchemy ORM with
+          class-based models, ensuring cleaner, more maintainable, and
+          extensible code.
+          <br />API Endpoints: Built endpoints for creating, retrieving,
+          updating, and deleting todos, with user-based ownership to keep data
+          secure and private. <br />Deployment-Ready Structure: The codebase is
+          modular and easy to extend, aligning with how production-ready APIs
+          are typically structured. Version Control: The project is available on
+          my GitHub, demonstrating my workflow, documentation, and ability to
+          share code professionally. This project reflects my commitment to
+          moving beyond tutorials and building real-world backend systems that
+          prioritize security, scalability, and clean architecture. It not only
+          strengthened my understanding of Flask but also gave me hands-on
+          experience implementing authentication flows and database design that
+          recruiters and teams expect in production environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

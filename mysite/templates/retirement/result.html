@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetireSmart</title>
+
+    <!-- CSS  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      /* space content below fixed navbar using a CSS variable so it's easy to adjust */
+      :root {
+        --navbar-height: 56px; /* default Bootstrap navbar height (approx) */
+      }
+
+      /* apply the offset to the main container so footer and other elements are unaffected */
+      .container {
+        padding-top: calc(
+          var(--navbar-height) + env(safe-area-inset-top, 0px) + 1rem
+        );
+      }
+
+      /* optional: reduce top padding on very small screens */
+      @media (max-width: 576px) {
+        :root {
+          --navbar-height: 48px;
+        }
+        .container {
+          padding-top: calc(
+            var(--navbar-height) + env(safe-area-inset-top, 0px) + 0.5rem
+          );
+        }
+      }
+
+      /* Slightly larger gaps on narrow screens for touch comfort */
+      @media (max-width: 768px) {
+        .row.g-4 {
+          gap: 1rem;
+        }
+      }
+
+      /* spacing above AI Generated Advice card */
+      .ai-advice {
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand">RetireSmart</a>
+        <a
+          class="nav-link active"
+          aria-current="page"
+          href="javascript:history.back()"
+          >Go Back</a
+        >
+      </div>
+    </nav>
+    <!-- nav end  -->
+    <div class="container">
+      <div class="row d-flex g-4">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Result</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">
+                Card subtitle
+              </h6> -->
+              <ul class="card-text list-group list-group-flush">
+                <li class="list-group-item">
+                  Total Needed: <span id="total_needed"></span>
+                </li>
+                <li class="list-group-item">
+                  Possible by retirement:
+                  <span id="total_possible_savings"></span>
+                </li>
+                <li class="list-group-item">
+                  Monthly Required Savings: <span id="monthly_required"></span>
+                </li>
+              </ul>
+              <br />
+              <p class="card-text">Readiness</p>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Example with label"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div class="progress-bar" style="width: 25%">25%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Spending Growth Due to Inflation</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">
+                Card subtitle
+              </h6> -->
+              <canvas id="projectionChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recommended Book</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">
+                Card subtitle
+              </h6> -->
+              <img src="" alt="" />
+              <p class="card-text">
+                <span id="bookTitle"></span> - <span id="bookAuthor"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 ai-advice">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">AI Generated Advise</h5>
+            <!-- <h6 class="card-subtitle mb-2 text-body-secondary">
+              Card subtitle
+            </h6> -->
+            <p class="card-text" id="ai_advice"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3 my-4 bg-body-tertiary">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a
+            href="https://www.linkedin.com/in/tanimowodavid"
+            class="nav-link px-2 text-body-secondary"
+            >LinkedIn</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://wa.me/+2349130739626"
+            class="nav-link px-2 text-body-secondary"
+            >WhatsApp</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://github.com/tanimowodavid"
+            class="nav-link px-2 text-body-secondary"
+            >Github</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="mailto:davidtanimowo01@gmail.com"
+            class="nav-link px-2 text-body-secondary"
+            >Email</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-body-secondary">&copy; 2025 Tanimowo David</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const stored = sessionStorage.getItem("retirementResults");
+
+        if (!stored) {
+          alert("No results found. Please calculate again.");
+          return;
+        }
+
+        const data = JSON.parse(stored);
+
+        // === Fill in Result Card ===
+        document.getElementById("total_needed").textContent = data.total_needed
+          ? `$${data.total_needed.toLocaleString()}`
+          : "N/A";
+
+        document.getElementById("total_possible_savings").textContent =
+          data.total_possible_savings
+            ? `$${data.total_possible_savings.toLocaleString()}`
+            : "N/A";
+
+        document.getElementById("monthly_required").textContent =
+          data.monthly_required
+            ? `$${data.monthly_required.toLocaleString()}`
+            : "N/A";
+
+        // Progress Bar
+        const readiness = (
+          (data.total_possible_savings / data.total_needed) *
+          100
+        ).toFixed(1);
+        const progressBar = document.querySelector(".progress-bar");
+        progressBar.style.width = readiness + "%";
+        progressBar.textContent = readiness + "% Ready";
+        progressBar.setAttribute("aria-valuenow", readiness);
+
+        // === Chart ===
+        const ctx = document.getElementById("projectionChart");
+        if (data.projection && data.projection.length > 0) {
+          new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: data.projection.map((p) => p.age),
+              datasets: [
+                {
+                  label: "Spending Growth Due to Inflation",
+                  data: data.projection.map(
+                    (p) => p.inflation_adjusted_spending
+                  ),
+                  borderColor: "rgb(75,192,192)",
+                  tension: 0.2,
+                },
+              ],
+            },
+          });
+        }
+
+        // === Book Recommendation ===
+        if (data.book_title) {
+          document.getElementById("bookTitle").textContent = data.book_title;
+        }
+        if (data.book_author) {
+          document.getElementById("bookAuthor").textContent = data.book_author;
+        }
+        if (data.cover_url) {
+          const img = document.querySelector(".card img");
+          img.src = data.cover_url;
+          img.alt = data.book_title || "Book cover";
+          img.classList.add("img-fluid");
+        }
+
+        // === AI Advice (Markdown) ===
+        if (data.ai_advice) {
+          document.getElementById("ai_advice").innerHTML = marked.parse(
+            data.ai_advice
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

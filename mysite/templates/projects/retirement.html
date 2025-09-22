@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block title %}RetireSmart{% endblock %} {% block
+content %} {% include 'nav.html' %}
+
+<section class="bio-wrapper">
+  <div class="padded">
+    <h1>RetireSmart</h1>
+    <span><h5>Retirement Awareness Tool</h5></span>
+    <div class="project-detail">
+      <div class="details">
+        <img
+          src="{{ url_for('static', filename='images/retire.png') }}"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          This app is a personal finance companion designed to help people take
+          control of their financial future. With just a few details — your
+          current age, income, spending, savings, retirement age, and an
+          estimate of inflation — the app calculates how much you’ll need to
+          retire comfortably and how much you should be saving today to get
+          there. <br /><br />
+          But it doesn’t stop at the numbers. To make the experience more
+          engaging and insightful, the app uses AI to generate personalized
+          financial advice, tailored to your lifestyle and goals. It even
+          recommends a relevant book to help you deepen your understanding of
+          money and retirement planning. <br /><br />
+          The app visualizes your journey with a projection chart that shows how
+          inflation will affect your spending over time, making it clear why
+          consistent saving and planning matter. With progress bars, clean
+          results cards, and structured advice formatted for readability, the
+          app transforms what could be a stressful calculation into an
+          interactive, motivating experience. <br /><br />
+          Built with Flask and deployed on Render, this project showcases my
+          ability to create user-centric applications that combine practical
+          functionality with modern design and AI integration. It’s a tool that
+          not only informs but also inspires users to take proactive steps
+          towards a secure financial future.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
