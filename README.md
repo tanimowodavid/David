@@ -9,9 +9,8 @@ It’s a simple portfolio built with **Flask**, and a touch of creativity.
 
 ## ✨ Highlights
 
-- Clean, responsive design inspired by social apps
+- Clean, responsive design
 - Projects: RetireSmart (finance app), Task Manager API, and more
-- Visitor quote wall (last 3 quotes appear live)
 - Hosted with Gunicorn + Render
 
 ---

@@ -37,10 +37,11 @@ block content %}
           Tanimowo David is a Software Engineer skilled in Python, Django, SQL,
           and APIs. He builds scalable backends and adds a touch of neat
           frontend when needed. Currently advancing his expertise through the
-          ALX ProDev Backend program, he is passionate about creating reliable
-          systems that make technology more accessible. Outside of coding, David
-          enjoys watching content and playing fast-paced video games, which fuel
-          his creativity and problem-solving mindset.
+          ALX Software Engineering ProDev program, he is passionate about
+          creating reliable systems that make technology more accessible.
+          Outside of coding, David enjoys watching content and playing
+          fast-paced video games, which fuel his creativity and problem-solving
+          mindset.
         </p>
       </div>
       <!-- <div class="bio-video">
@@ -153,6 +154,22 @@ block content %}
     <br /><br />
     <div class="project">
       <div class="project-img">
+        <img src="static/images/parlcare.png" alt="" />
+      </div>
+      <div class="project-description">
+        <h3>Parlcare</h3>
+        <p>
+          A clean landing page for parlcare services built with HTML, CSS and
+          JavaScript.
+        </p>
+        <div class="project-links">
+          <a href="www.parlcare.com">visit</a>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="project">
+      <div class="project-img">
         <img src="static/images/mysite.png" alt="" />
       </div>
       <div class="project-description">
@@ -176,54 +193,15 @@ block content %}
 <!-- Q U O T E S  -->
 <section class="quote-wrapper">
   <div id="visitor-wall" class="wall">
-    <h2>Last 3 Visitor Quotes</h2>
-    <!-- Avatars -->
-    <div class="avatar-row">
-      {% for q in quotes[:] %}
-      <button
-        class="quote-toggle"
-        data-quote="{{ q.quote }}"
-        data-name="{{ q.name }}"
-        data-avatar="{{ q.avatar }}"
-      >
-        <img src="{{ q.avatar }}" class="avatar" />
-      </button>
-      {% endfor %}
-    </div>
+    <h2>Favourite Quote</h2>
     <!-- Main quote display -->
     <div id="main-quote" class="quote-box">
-      {% if quotes %}
       <p class="quote-mark"><i class="bi bi-quote"></i></p>
-      <p>{{ quotes[0].quote }}</p>
-      <span>— {{ quotes[0].name }}</span>
-      {% else %}
-      <p>No quotes yet. Be the first! ✍️</p>
-      {% endif %}
+      <p>
+        All our dreams can come true, if we have the courage to pursue them.
+      </p>
+      <span>— Walt Disney</span>
     </div>
-
-    <!-- Leave a mark button -->
-    <button id="leave-mark" class="mark-btn">
-      <i class="bi bi-pen"></i> Leave a mark
-    </button>
-
-    <!-- Modal -->
-    <form>
-      <div id="quote-modal" class="modal hidden">
-        <div class="modal-content">
-          <h3>Leave a Mark</h3>
-          <input type="text" id="name-input" required placeholder="Your name" />
-          <textarea
-            id="quote-input"
-            placeholder="Your quote"
-            maxlength="200"
-            required
-          ></textarea>
-          <p id="char-count">0/200</p>
-          <button id="submit-quote" class="submit-btn">Submit</button>
-          <button id="close-modal" class="close-btn">Cancel</button>
-        </div>
-      </div>
-    </form>
   </div>
 </section>
 {% endblock %} {% block script %}

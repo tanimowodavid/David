@@ -263,39 +263,16 @@ ul {
 /* B I O  */
 .bio {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  justify-content: space-between;
 }
 
-.bio-video,
 .bio-text {
-  /* margin-left: 40vw; */
-  flex: 1;
+  margin-left: 40vw;
   font-family: var(--title-font);
 }
 
-.bio-video {
-  width: 100%; /* Or any other width you want */
-  max-width: 640px; /* Example max-width */
-  margin: auto;
-}
-.bio-video iframe {
-  width: 100%; /* Or any other width you want */
-  max-width: 640px; /* Example max-width */
-  margin: auto;
-  aspect-ratio: 16/9;
-}
-.bio-video video {
-  width: 100%;
-  height: 100%;
-}
 @media (max-width: 768px) {
-  .bio {
-    /* padding-top: 2rem; */
-    flex-direction: column;
+  .bio-text {
+    margin-left: 0;
   }
 }
 /* S K I L L S  */

@@ -6,9 +6,7 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY = os.environ.get("SECRET_KEY", "dev"),
-        SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "sqlite:///quotes.db"),
-        SQLALCHEMY_TRACK_MODIFICATIONS=False
+        SECRET_KEY = os.environ.get("SECRET_KEY", "dev")
     )
 
     if test_config is None:
@@ -24,12 +22,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from .models import db
-    db.init_app(app)
-
-    # Create tables
-    with app.app_context():
-        db.create_all()
 
     # Register Blueprints
     from . import david, retirement, projects
